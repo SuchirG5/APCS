@@ -120,7 +120,7 @@ public class Test
 
     public String replaceAll(String base, String sub, String rep)
     {
-        for(int i = 0; i <= base.length() - sub.length())
+        for(int i = 0; i <= base.length() - sub.length(); i++)
         {
             if(base.substring(i, i + sub.length()).equals(sub))
             {
