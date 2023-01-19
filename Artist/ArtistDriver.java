@@ -92,15 +92,17 @@ public class ArtistDriver {
 		// input
 		Artist[] myArray = readFile();
 		//  print the array before sorting
-		printArray(myArray);
+		ArtistInsertionSort.printArray(myArray);
+		System.out.println("\n\n");
 
 		// sort the array
 		//*************   Your code here   ********
-
+		ArtistInsertionSort.sort(myArray);
 
 		//print the array after sorting
 		//*************   Your code here   ********
-
+			ArtistInsertionSort.printArray(myArray);
+		
 		// Panel Output
 		final int N = 1600;
 		final int imgSize = N / myArray.length;
@@ -131,6 +133,7 @@ public class ArtistDriver {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setContentPane(new ArtistPanel(image));
 		frame.setVisible(true);
+		//test
 
 	}
 }

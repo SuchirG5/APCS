@@ -8,6 +8,7 @@ public class Searches_Driver
    {
       String[] apple = input("declaration.txt");
     //  ********   SORT YOUR ARRAY - you can use Arrays.sort(apple);  
+    Arrays.sort(apple);
       Scanner sc = new Scanner(System.in);
       System.out.print("Enter a word: ");
       String target = sc.next();   //Liberty  
@@ -48,18 +49,42 @@ class Searches
    @SuppressWarnings("unchecked")//this removes the warning for Comparable
    public static int linear(Comparable[] array, Comparable target)
    { 
-      return -99;
+      for(int i = 0; i < array.length; i++)
+      {
+         linearCount++;
+         if(array[i].equals(target))
+         {
+            
+            return i;
+         }
+      }
+      return -1;
    }
    
    @SuppressWarnings("unchecked")//this removes the warning for Comparable
    public static int binary(Comparable[] array, Comparable target)
    {
-      return -99;
+      return binaryhelper(array, target, 0, array.length);
    }
    
    @SuppressWarnings("unchecked")//this removes the warning for Comparable
    private static int binaryhelper(Comparable[] array, Comparable target, int start, int end)
    {
-      return -99;
+      int mid = (start+end)/2;
+      if(mid==start && !array[mid].equals(target)) return -1;
+      if(array[mid].compareTo(target) == 0)
+      {
+         return mid;
+      }
+      else if(array[mid].compareTo(target)>0)
+      {
+         binaryCount++;
+         return binaryhelper(array, target, start, mid-1);
+      }
+      else
+      {
+         binaryCount++;
+         return binaryhelper(array, target, mid+1, end);
+      }
    }
 }

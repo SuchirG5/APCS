@@ -70,6 +70,7 @@ public class Artist implements Comparable<Artist>
        }
     }
     //getters and setters
+    
 
     
 }
